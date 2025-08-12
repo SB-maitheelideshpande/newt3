@@ -4,7 +4,9 @@ x-stoplight:
 info:
   version: '0.1'
   title: Dice Employer API
-  description: DHI Public API
+  description: |-
+    DHI Public API.
+    aaaa
   contact:
     name: API ATS Integrations
     email: api@dhigroupinc.com
