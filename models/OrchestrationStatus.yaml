@@ -1,0 +1,15 @@
+title: OrchestrationStatus
+x-stoplight:
+  id: 8097r9e6mxpyt
+type: string
+enum:
+  - Cancelled
+  - AwaitingApproval
+  - Confirmed
+  - Declined
+  - Failed
+  - Ready
+  - Live
+  - Completed
+  - CancellationInProgress
+x-internal: false

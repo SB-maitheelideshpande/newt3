@@ -1,0 +1,292 @@
+{
+  "collapseTableOfContents": false,
+  "items": [
+    {
+      "type": "divider",
+      "title": "APIS"
+    },
+    {
+      "type": "group",
+      "title": "Dice Employer API",
+      "uri": "/Job_Portal_API.yml",
+      "items": [
+        {
+          "type": "group",
+          "title": "Applications",
+          "items": [
+            {
+              "type": "item",
+              "title": "GET Application Details",
+              "uri": "/Job_Portal_API.yml/paths/~1v0.1~1applications~1{id}/get"
+            },
+            {
+              "type": "item",
+              "title": "GET Application List",
+              "uri": "/Job_Portal_API.yml/paths/~1v0.1~1applications/get"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "title": "Health",
+          "items": [
+            {
+              "type": "item",
+              "title": "GET Gateway Health",
+              "uri": "/Job_Portal_API.yml/paths/~1v0.1~1health/get"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "title": "Jobs",
+          "items": [
+            {
+              "type": "item",
+              "title": "GET Job List",
+              "uri": "/Job_Portal_API.yml/paths/~1v0.1~1jobs/get"
+            },
+            {
+              "type": "item",
+              "title": "POST Job",
+              "uri": "/Job_Portal_API.yml/paths/~1v0.1~1jobs/post"
+            },
+            {
+              "type": "item",
+              "title": "GET Job Details",
+              "uri": "/Job_Portal_API.yml/paths/~1v0.1~1jobs~1{id}/get"
+            },
+            {
+              "type": "item",
+              "title": "PATCH Job",
+              "uri": "/Job_Portal_API.yml/paths/~1v0.1~1jobs~1{id}/patch"
+            },
+            {
+              "type": "item",
+              "title": "DELETE Job",
+              "uri": "/Job_Portal_API.yml/paths/~1v0.1~1jobs~1{id}/delete"
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "title": "Schemas",
+          "items": [
+            {
+              "type": "item",
+              "title": "Gateway Health schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/HealthResponse"
+            },
+            {
+              "type": "item",
+              "title": "Application Detail schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/ApplicationDetailv01"
+            },
+            {
+              "type": "item",
+              "title": "Candidate Detail schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/CandidateDetailv01"
+            },
+            {
+              "type": "item",
+              "title": "Education detail schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/Education"
+            },
+            {
+              "type": "item",
+              "title": "Work history detail schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/WorkHistory"
+            },
+            {
+              "type": "item",
+              "title": "Contact schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/Contact"
+            },
+            {
+              "type": "item",
+              "title": "Phone Number schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/PhoneNumber"
+            },
+            {
+              "type": "item",
+              "title": "Job schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/Job"
+            },
+            {
+              "type": "item",
+              "title": "Job Detail schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/JobDetail"
+            },
+            {
+              "type": "item",
+              "title": "Locations schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/Locations"
+            },
+            {
+              "type": "item",
+              "title": "Location Detail schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/Location"
+            },
+            {
+              "type": "item",
+              "title": "Location Detail schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/LocationPostPatch"
+            },
+            {
+              "type": "item",
+              "title": "Candidate schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/Candidate"
+            },
+            {
+              "type": "item",
+              "title": "Application List Detail schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/ApplicationListDetail"
+            },
+            {
+              "type": "item",
+              "title": "Application List item schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/ApplicationListItem"
+            },
+            {
+              "type": "item",
+              "title": "Resume Detail schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/ResumeDetail"
+            },
+            {
+              "type": "item",
+              "title": "Cover Letter Detail schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/CoverLetterDetail"
+            },
+            {
+              "type": "item",
+              "title": "The OFCCP Detail schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/OfccpDetail"
+            },
+            {
+              "type": "item",
+              "title": "Meta schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/PaginatedResponseMeta"
+            },
+            {
+              "type": "item",
+              "title": "Meta Quota schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/QuotaMeta"
+            },
+            {
+              "type": "item",
+              "title": "Quota schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/Quotas"
+            },
+            {
+              "type": "item",
+              "title": "Links schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/Links"
+            },
+            {
+              "type": "item",
+              "title": "Self link schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/SelfLink"
+            },
+            {
+              "type": "item",
+              "title": "Href schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/Href"
+            },
+            {
+              "type": "item",
+              "title": "Error schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/ErrorResponse"
+            },
+            {
+              "type": "item",
+              "title": "Unauthorized schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/UnauthorizedResponse"
+            },
+            {
+              "type": "item",
+              "title": "Job quota exceeded schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/JobQuotaExceededResponse"
+            },
+            {
+              "type": "item",
+              "title": "Delete Job Response schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/DeleteJobResponse"
+            },
+            {
+              "type": "item",
+              "title": "Job Post Request schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/PostJobRequest"
+            },
+            {
+              "type": "item",
+              "title": "Job Post Response schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/PostJobResponse"
+            },
+            {
+              "type": "item",
+              "title": "List Job Response schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/ListJobsResponse"
+            },
+            {
+              "type": "item",
+              "title": "List Job Detail schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/ListJobsDetail"
+            },
+            {
+              "type": "item",
+              "title": "Job Patch Request schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/PatchJobRequest"
+            },
+            {
+              "type": "item",
+              "title": "Job Patch Response schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/PatchJobResponse"
+            },
+            {
+              "type": "item",
+              "title": "Get Job by ID Response schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/GetJobByIdResponse"
+            },
+            {
+              "type": "item",
+              "title": "External Job schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/ExternalJob"
+            },
+            {
+              "type": "item",
+              "title": "Employer Contact Ref schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/EmployerContactRef"
+            },
+            {
+              "type": "item",
+              "title": "Employer schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/Employer"
+            },
+            {
+              "type": "item",
+              "title": "Company schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/Company"
+            },
+            {
+              "type": "item",
+              "title": "Compensation schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/Compensation"
+            },
+            {
+              "type": "item",
+              "title": "Contract Employment Schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/ContractEmploymentRequirements"
+            },
+            {
+              "type": "item",
+              "title": "Delete Job Response schema",
+              "uri": "/Job_Portal_API.yml/components/schemas/DeleteJob"
+            }
+          ],
+          "itemsType": "model"
+        }
+      ]
+    }
+  ],
+  "version": 2
+}

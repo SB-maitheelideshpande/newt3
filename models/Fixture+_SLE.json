@@ -1,0 +1,476 @@
+{
+  "type": "object",
+  "x-stoplight": {
+    "id": "il6p7prjunwat"
+  },
+  "title": "Fixture+ SLE DATA",
+  "description": "Metadata coming from Portal UI (Fixture+) SLE ONLY",
+  "$defs": {
+    "SleTypeTactical": {
+      "type": "string",
+      "enum": [
+        "Planned Fixture",
+        "Planned Placeholder"
+      ],
+      "title": "SleTypeTactical",
+      "description": "Single Live Event Type.\n\nPlanned Placeholder if the confirmed event has no data attached.\nPlanned Fixture if the confirmed event has real data attached to it.",
+      "x-stoplight": {
+        "id": "edwcyl05jf4o2"
+      }
+    },
+    "EventType": {
+      "type": "object",
+      "enum": [
+        "Sports",
+        "Entertainment",
+        "News",
+        "Other"
+      ],
+      "title": "EventType",
+      "x-stoplight": {
+        "id": "2mo3c8j0e90un"
+      }
+    },
+    "EventSubType": {
+      "type": "object",
+      "enum": [
+        "Tennis",
+        "Undefined",
+        "AmericanFootball",
+        "Athletics",
+        "Baseball",
+        "Basketball",
+        "Boxing",
+        "Cricket",
+        "Fishing",
+        "Football",
+        "Golf",
+        "IceHockey",
+        "MotorSport",
+        "Racing",
+        "Rugby",
+        "Equestrian",
+        "WinterSports",
+        "SnookerPool",
+        "Wrestling",
+        "Darts",
+        "WaterSports",
+        "Extreme",
+        "Business",
+        "Features",
+        "Politics",
+        "News",
+        "WorldAffairs",
+        "Showbiz",
+        "Transport"
+      ],
+      "title": "EventSubType",
+      "x-stoplight": {
+        "id": "c2cri7oi3wobh"
+      }
+    },
+    "EventTier": {
+      "type": "object",
+      "enum": [
+        "BRONZE",
+        "SILVER",
+        "GOLD",
+        "PLATINUM"
+      ],
+      "title": "EventTier",
+      "x-stoplight": {
+        "id": "2ktc4dz1434q6"
+      }
+    },
+    "DataProvider": {
+      "type": "string",
+      "enum": [
+        "Opta",
+        "Smt",
+        "Pa",
+        "Sky"
+      ],
+      "title": "DataProvider",
+      "x-stoplight": {
+        "id": "2yotob8refzca"
+      }
+    },
+    "SleStatus": {
+      "type": "string",
+      "enum": [
+        "Confirmed",
+        "Cancelled"
+      ],
+      "title": "SleStatus",
+      "description": "Confirmed when published\nCancelled if Producer decides to cancel a Confirmed Sle",
+      "x-stoplight": {
+        "id": "99sws16xt5lhb"
+      }
+    },
+    "FixtureStatus": {
+      "type": "object",
+      "enum": [
+        "Played",
+        "Cancelled",
+        "Fixture",
+        "Playing",
+        "Postponed",
+        "Suspended",
+        "Walkover"
+      ],
+      "title": "FixtureStatus",
+      "x-stoplight": {
+        "id": "lbr60lwuvrfq0"
+      }
+    },
+    "Territory": {
+      "type": "object",
+      "enum": [
+        "GB",
+        "IT",
+        "DE"
+      ],
+      "title": "Territory",
+      "x-stoplight": {
+        "id": "7tc38j21vxyts"
+      }
+    }
+  },
+  "required": [
+    "fixtureId",
+    "eventGroupName",
+    "estimatedStart",
+    "estimatedEnd",
+    "sleType",
+    "eventCategory",
+    "eventType",
+    "eventTypeId",
+    "eventSubType",
+    "eventSubTypeId",
+    "sleStatus",
+    "eventAttributes",
+    "propositions",
+    "visibilityStart",
+    "playableStart",
+    "playableEnd",
+    "displayStart",
+    "displayEnd"
+  ],
+  "properties": {
+    "fixtureId": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "ra4cwandwlxnt"
+      },
+      "description": "Unique ID of the sport fixture (match or event) unrespectful how many sleId Programs exist for it",
+      "example": "2ec46b2b-6737-4f43-8a91-26470a0529d5"
+    },
+    "fixtureGroup": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "4udcj79h3hvl4"
+      },
+      "description": "In a multicamera sport event, all the children fixtures representing individual camera events, share the same fixtureGroup representing the father (e.g. camera cars in a race)"
+    },
+    "groupOfFixtures": {
+      "type": "array",
+      "x-stoplight": {
+        "id": "ltvf3zsnhysgb"
+      },
+      "description": "Reserved for future requirements. Can be ignored and not propagated downstream",
+      "items": {
+        "x-stoplight": {
+          "id": "2aius700wnb1r"
+        },
+        "type": "string",
+        "example": "FixtureID1"
+      }
+    },
+    "lastUpdated": {
+      "type": "string",
+      "description": "last date/time when the event was updated\r\n\r\n",
+      "format": "date-time",
+      "examples": [
+        "2024-01-29T00:00:00Z"
+      ],
+      "x-stoplight": {
+        "id": "daybijvkc9yfz"
+      },
+      "example": "2024-01-29T00:00:00Z"
+    },
+    "eventGroupName": {
+      "type": "string",
+      "description": "The name of the Competition. Taked from Data Provider by default. Editorialized Field\r\n\r\n",
+      "examples": [
+        "United Cup 2024"
+      ],
+      "x-stoplight": {
+        "id": "jbpux4rr6w8ec"
+      },
+      "example": "United Cup 2024"
+    },
+    "estimatedStart": {
+      "type": "string",
+      "description": "Actual Start by default\r\nEditable field by Producer",
+      "format": "date-time",
+      "examples": [
+        "2023-06-25T14:45:00.000000Z"
+      ],
+      "x-stoplight": {
+        "id": "xvt206pgnt21n"
+      },
+      "example": "2024-01-29T00:00:00Z"
+    },
+    "estimatedEnd": {
+      "type": "string",
+      "description": "Actual Start of the next match by default\r\nEditable field by Producer",
+      "format": "date-time",
+      "examples": [
+        "2023-06-25T14:45:00.000000Z"
+      ],
+      "x-stoplight": {
+        "id": "r1j3of0gdk4uq"
+      },
+      "example": "2024-01-29T00:00:00Z"
+    },
+    "sleType": {
+      "$ref": "./SleTypeTactical.yaml",
+      "description": "Single Live Event Type.\r\nPlanned Placeholder if the confirmed event has no data attached.\r\nPlanned Fixture if the confirmed event has real data attached to it.",
+      "x-stoplight": {
+        "id": "1yrjghpae45xc"
+      }
+    },
+    "eventCategory": {
+      "x-stoplight": {
+        "id": "15yir8mamtzaa"
+      },
+      "enum": [
+        "Sports",
+        "News",
+        "Entertainment"
+      ]
+    },
+    "eventType": {
+      "$ref": "../models/EventType.yaml",
+      "x-stoplight": {
+        "id": "dsuz5130awsgv"
+      },
+      "description": "This value drives the eventAttributes object that is specific to the Type and SubType of the event\r\n\r\nE.g. for Type \"Sport\", SubType \"Motorsport\" eventAttributes will be different than Tennis"
+    },
+    "eventTypeId": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "jj7ikm6h7gnvg"
+      },
+      "description": "Unique if for the type of sport (links with ID in sMDS interface)"
+    },
+    "eventSubType": {
+      "x-stoplight": {
+        "id": "f0wj5ule0dbgo"
+      },
+      "description": "subtype of the sport (e.g. Campionato Serie A, FIA F1 World Championship)\r\n\r\nFor Tennis this represents a Tour (ATP World Tour or WTA). The year version of that tour (instance of) is the Tour Calendar represented in this message by eventParentGroupName$0",
+      "type": "string"
+    },
+    "eventSubTypeId": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "m4fbl3um9gd8k"
+      }
+    },
+    "sleStatus": {
+      "$ref": "./SleStatus.yaml",
+      "description": "Confirmed when published\r\nCancelled if Producer decides to cancel a Confirmed Sle\r\n\r\nif an event is Cancelled because not televised. All *End dates will be set to now() if an event is Cancelled because the Sport event has been cancelled, all dates remain the same",
+      "x-stoplight": {
+        "id": "prunj3r69tlyv"
+      }
+    },
+    "eventAttributes": {
+      "type": "object",
+      "description": "List of attributes based on Event Type and Event SubType\r\n\r\n",
+      "x-stoplight": {
+        "id": "izdgnvvuppqgl"
+      },
+      "properties": {
+        "contestants": {
+          "type": "array",
+          "x-stoplight": {
+            "id": "d1no5c5wg5mxj"
+          },
+          "items": {
+            "x-stoplight": {
+              "id": "l0j6bboyro8uu"
+            },
+            "type": "object",
+            "required": [
+              "id",
+              "type"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "x-stoplight": {
+                  "id": "of8i7u4vbbs42"
+                },
+                "example": "da1i4xy1pkgjpg95yapxgcbkk"
+              },
+              "position": {
+                "type": "string",
+                "x-stoplight": {
+                  "id": "5mhr3vutyhm5h"
+                },
+                "example": "a"
+              },
+              "type": {
+                "x-stoplight": {
+                  "id": "c13e0959arrsq"
+                },
+                "enum": [
+                  "Team",
+                  "Person"
+                ]
+              }
+            }
+          }
+        },
+        "bonusStreamType": {
+          "type": "string",
+          "x-stoplight": {
+            "id": "kp6184x0cly5e"
+          },
+          "description": "The type of multicamera feed in the fixture (e.g. “onboardCamera\", \"timings\", \"battlecam\") If this field exists, than that fixture is a bonus stream of type valueOf(bonusStreamType). If the attribute doesn't exist, than that fixture is a standard fixture"
+        },
+        "bonusStreamOrder": {
+          "type": "integer",
+          "x-stoplight": {
+            "id": "6vsgzmtz4i2zv"
+          },
+          "description": "The field expresses a suggestion for ordering, that is: the tile for a fixture with a lower order number should be placed in the catalogue before a fixture with a higher number\r\nThe field is not mandatory. In case the Sport Producer don’t express any ordering number, the field won’t be present and the ordering left to the end platform\r\nFixtures might arrive in random order to ECP and SLE Publisher. It’s not guaranteed that a fixture with order 2 will arrive after the one with order 1\r\nDue to the editorial choice of order numbers by the Sport Producer and due to editorial decisions to produce/not produce a bonus stream: a. there might be missing number in the sequence. For example the sequence 1, 2, 4, 9, 20, 100 represents 6 ordered fixtures, not 100 fixtures with 94 holes b. during a manual reshuffle (e.g. the producer wants to swap 1 and 4) there may temporarily be two different fixtures with the same ordering number (e.g. the “4” that former was “1” and the original “4” remained “4”) followed by another update (“4” that become “1”)"
+        }
+      }
+    },
+    "propositions": {
+      "type": "array",
+      "x-stoplight": {
+        "id": "oj6vin80njwep"
+      },
+      "items": {
+        "type": "object",
+        "x-stoplight": {
+          "id": "zybcwctyplfgc"
+        },
+        "required": [
+          "territory",
+          "platform",
+          "rights"
+        ],
+        "properties": {
+          "territory": {
+            "$ref": "../models/Territory.yaml",
+            "x-stoplight": {
+              "id": "7p3h4q1g75vgw"
+            }
+          },
+          "platform": {
+            "$ref": "./Platform.yaml",
+            "description": "List of proposition strings (e.g. \"PPTV\", \"Q\", \"Glass\", \"Mobile\", \"Wholesale\"). TO BE DEFINED\r\n\r\n",
+            "x-stoplight": {
+              "id": "j44n9tbbud1vs"
+            }
+          },
+          "rights": {
+            "$ref": "../models/Rights.yaml",
+            "x-stoplight": {
+              "id": "txlhsf5j30e48"
+            }
+          }
+        }
+      }
+    },
+    "visibilityStart": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "4jct64tlzr73s"
+      },
+      "description": "The date from when the event will be discoverable to customers in the apps. This date is sport specific and for Tennis is statically set to -24 hrs from the estimatedStart of the match",
+      "example": "2024-01-29T00:00:00Z"
+    },
+    "playableStart": {
+      "type": "string",
+      "description": "null or not safe until MD. It will be set according to estimatedStart with static offeset to be defined. Pending requirements definition\r\n\r\n",
+      "examples": [
+        "2024-01-29T00:00:00Z"
+      ],
+      "x-stoplight": {
+        "id": "uban4gmahovfs"
+      },
+      "example": "2024-01-29T00:00:00Z"
+    },
+    "playableEnd": {
+      "type": "string",
+      "description": "null or not safe until MD. It will be set according to estimatedStart with static offeset to be defined. Pending requirements definition\r\n\r\n",
+      "examples": [
+        "2024-01-29T00:00:00Z"
+      ],
+      "x-stoplight": {
+        "id": "xouew23n1qlwz"
+      },
+      "example": "2024-01-29T00:00:00Z"
+    },
+    "displayStart": {
+      "type": "string",
+      "description": "null or not safe until MD. It will be set according to estimatedStart with static offeset to be defined. Pending requirements definition\r\n\r\n",
+      "examples": [
+        "2024-01-29T00:00:00Z"
+      ],
+      "x-stoplight": {
+        "id": "4osnzd7mraeif"
+      },
+      "example": "2024-01-29T00:00:00Z"
+    },
+    "displayEnd": {
+      "type": "string",
+      "description": "null or not safe until MD. It will be set according to estimatedStart with static offeset to be defined. Pending requirements definition\r\n\r\n",
+      "examples": [
+        "2024-01-29T00:00:00Z"
+      ],
+      "x-stoplight": {
+        "id": "6vlcfzewgf94s"
+      },
+      "example": "2024-01-29T00:00:00Z"
+    },
+    "relatedProgrammes": {
+      "type": "array",
+      "x-stoplight": {
+        "id": "s1xuoe8tpg2v0"
+      },
+      "items": {
+        "$ref": "../models/relatedProgrammes.yaml",
+        "x-stoplight": {
+          "id": "1k9nol68if2wu"
+        }
+      }
+    },
+    "extDataProvider": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "mvy5zec1bwmuk"
+      },
+      "description": "the name of the external data provider. Ex. Opta\r\n\r\n"
+    },
+    "extEventGroupId": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "26cbedvw5lygu"
+      },
+      "description": "id of the external competition linked to the fixtureId. Note: It is a common string and not a GUID\r\n\r\n"
+    },
+    "extEventId": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "7fbx6zrdl09dv"
+      },
+      "description": "id of the external event linked to the fixtureId. Note: It is a common string and not a GUID\r\n\r\n"
+    }
+  },
+  "x-internal": false
+}

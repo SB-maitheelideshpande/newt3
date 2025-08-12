@@ -1,0 +1,236 @@
+title: DistributionStreams
+x-stoplight:
+  id: x9its7sqhxh1p
+type: object
+description: Data coming from EMS
+examples:
+  - platform: NOWTV
+    territory: GB
+    streams:
+      - provider: MAINSTREAMING
+        protocol: SRT
+        encryption: NO_ENCRYPTION
+        data:
+          drmConfigAlias: string
+          drmContentId: string
+          serviceKey: 0
+          srtId: string
+          urls:
+            - string
+          srtEndpoint1: '“https://srt-url.sky.com”'
+          srtEndpoint2: '“https://srt-url.sky.com”'
+          scte35Pid: '96'
+          programNumber: '1'
+          videoCodec: AVC
+          container: MPEGTS
+          transport: SRT
+          audioTrack:
+            - locale: en-GB
+              embedded: true
+              pid: '64'
+              codec: PCM
+              audiotype: Stereo
+x-internal: false
+required:
+  - platform
+  - territory
+  - streams
+properties:
+  platform:
+    $ref: ./Platform.yaml
+    x-stoplight:
+      id: 96brnngbdxf8c
+  territory:
+    $ref: ../models/Territory.yaml
+    x-stoplight:
+      id: sq64qhu9oeau8
+  streams:
+    type: array
+    x-stoplight:
+      id: sgbnphh4e714p
+    items:
+      x-stoplight:
+        id: fv9ydf4tkybxd
+      type: object
+      required:
+        - provider
+        - protocol
+        - encryption
+        - data
+      properties:
+        provider:
+          x-stoplight:
+            id: ujh301swu0s9f
+          enum:
+            - SDE
+            - AKAMAI
+            - LIMELIGHT
+            - MAINSTREAMING
+            - SKYCDN
+            - CLOUDFRONT
+        protocol:
+          x-stoplight:
+            id: 81w9rwbw4wp7t
+          enum:
+            - SRT
+            - DASH
+            - HLS
+            - HSS
+        encryption:
+          x-stoplight:
+            id: pvfi9etxgkevj
+          enum:
+            - NO_ENCRYPTION
+            - AES_128
+            - AES_192
+            - AES_256
+            - WIDEVINE
+            - FAIRPLAY
+            - VGC
+            - PLAYREADY
+        data:
+          type: object
+          x-stoplight:
+            id: sn1m52mlokfvz
+          properties:
+            drmConfigAlias:
+              type: string
+              x-stoplight:
+                id: m3kubxdp6rg3d
+            drmContentId:
+              type: string
+              x-stoplight:
+                id: uf60yu5dn2xry
+            serviceKey:
+              type: number
+              x-stoplight:
+                id: 1ns6pi8wopvhu
+              example: 7001
+            srtId:
+              type: string
+              x-stoplight:
+                id: oxu3aucaxjob3
+              example: '1234'
+            urls:
+              type: array
+              x-stoplight:
+                id: 1h70rf2547szu
+              minItems: 1
+              items:
+                x-stoplight:
+                  id: 71jabqcbmrcea
+                type: string
+                example: 'https://event052-gb-dash1-prd-ak.cdn.skycdp.com/37111/sde-sportof-f1001/master_sd_25.mpd'
+            scte35Pid:
+              type: string
+              x-stoplight:
+                id: vncij2kqopdn1
+            programNumber:
+              type: string
+              x-stoplight:
+                id: ogjsodu3u73z2
+            videoCodec:
+              type: string
+              x-stoplight:
+                id: dsxatiy29sixz
+            container:
+              type: string
+              x-stoplight:
+                id: 2xux9wfse5vrk
+            transport:
+              type: string
+              x-stoplight:
+                id: jna4w61ccehab
+            videoQuality:
+              type: string
+              x-stoplight:
+                id: cxi2ok8cp9rki
+              description: '*NEW 2.0.1*'
+              example: HD
+            videoQualityResolution:
+              type: string
+              x-stoplight:
+                id: 1wupevtleivag
+              description: '*NEW 2.0.1*'
+              example: 1080p
+            colorSpace:
+              type: string
+              x-stoplight:
+                id: via6ry9x5kuml
+              description: '*NEW 2.0.1*'
+              example: SDR
+            videoPid:
+              type: string
+              x-stoplight:
+                id: nwix5sbhk4ze5
+              description: '*NEW 2.0.1*'
+              example: '64'
+            framerate:
+              type: string
+              x-stoplight:
+                id: x3hcnojb59vwt
+              description: '*NEW 2.0.1*'
+              example: '25'
+            subtitles:
+              type: boolean
+              x-stoplight:
+                id: nddgjv5oj3il8
+              description: '*NEW 2.0.1*'
+              default: false
+            closedCaptions:
+              type: boolean
+              x-stoplight:
+                id: kdtw4q262o8fe
+              description: '*NEW 2.0.1*'
+              default: false
+            audioTracks:
+              type: array
+              x-stoplight:
+                id: dxsyy3qhrsge4
+              description: '*NEW 2.0.1*'
+              items:
+                x-stoplight:
+                  id: oy34xmjclw5qp
+                type: object
+                properties:
+                  locale:
+                    type: string
+                    x-stoplight:
+                      id: hamkp6ds2d5qm
+                    description: '*NEW 2.0.1*'
+                    example: eng-GB
+                  audioType:
+                    type: string
+                    x-stoplight:
+                      id: 6f9r5bn0pzeuz
+                    description: '*NEW 2.0.1*'
+                    example: stereo
+                  pid:
+                    type: string
+                    x-stoplight:
+                      id: vuvaf6pon8gb7
+                    description: '*NEW 2.0.1*'
+                    example: '35'
+                  codec:
+                    type: string
+                    x-stoplight:
+                      id: szjcrujvivvyb
+                    description: '*NEW 2.0.1*'
+                    example: PCM
+                  container:
+                    type: string
+                    x-stoplight:
+                      id: 6zj4te5bkan5w
+                    description: '*NEW 2.0.1*'
+                    example: M2TS
+                  transport:
+                    type: string
+                    x-stoplight:
+                      id: cjjh7a4uggepz
+                    description: '*NEW 2.0.1*'
+                    example: SRT
+                  dvs:
+                    type: boolean
+                    x-stoplight:
+                      id: ihqs9dlb8bxzk
+                    description: '*NEW 2.0.1*'
